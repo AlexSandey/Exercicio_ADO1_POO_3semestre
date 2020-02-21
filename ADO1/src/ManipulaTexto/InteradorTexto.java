@@ -9,6 +9,7 @@ import java.io.*;
  * @version: 1.0 Main Class File: topAXX.java File: Structure.java Date:
  * DD/MM/YYYY
  */
+
 public class InteradorTexto {
 
     public static void main(String[] args) {
@@ -42,7 +43,7 @@ public class InteradorTexto {
         }
 
 
-        /* ------------------------------------- */
+ /* ------------------------------------- */
  /* Exemplo de escrita em arquivo */
  /* ------------------------------------- */
         String arquivoDeSaida = "saida.txt";
