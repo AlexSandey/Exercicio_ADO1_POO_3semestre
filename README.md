@@ -1,12 +1,12 @@
-# ManipulaTexto_ADO1_POO
+#Exercicio da semana da material de POO
 
-ExercÌcio: 
+Exerc√≠cio: 
 
-Deseja-se um aplicativo capaz de tomar os dados em um arquivo de texto contendo os PIBs por estado do Brasil (pib.txt) carreg·-los na memÛria e executar os seguintes itens:
+Deseja-se um aplicativo capaz de tomar os dados em um arquivo de texto contendo os PIBs por estado do Brasil (pib.txt) carreg√°-los na mem√≥ria e executar os seguintes itens:
 
-a-) Imprimir na tela a lista de PIB por estado em percentual em relaÁ„o ao total.
+a-) Imprimir na tela a lista de PIB por estado em percentual em rela√ß√£o ao total.
 
-b-) Gerar um arquivo de saÌda (saida.txt) sumarizando (somando) o PIB por regiıes. Ser· fornecida uma lista de estados por regiıes que deve ser lida do arquivo regioes.txt
+b-) Gerar um arquivo de sa√≠da (saida.txt) sumarizando (somando) o PIB por regi√µes. Ser√° fornecida uma lista de estados por regi√µes que deve ser lida do arquivo regioes.txt
 
  
 
