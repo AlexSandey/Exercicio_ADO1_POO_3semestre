@@ -10,7 +10,7 @@
 
  
 
-O aluno deve compilar, testar, empacotar e enviar para o instrutor nos devidos formatos.
+* O aluno deve compilar, testar, empacotar e enviar para o instrutor nos devidos formatos. *
 
 
 - [x] Finalizada
