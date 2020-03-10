@@ -1,18 +1,18 @@
 Norte
-Rondônia
+Rondonia
 Acre
 Amazonas
 Roraima
-Pará
-Amapá
+Para
+Amapa
 Tocantins
 
 Nordeste
-Maranhão
-Piauí
-Ceará
+Maranhao
+Piaui
+Ceara
 Rio Grande do Norte
-Paraíba
+Paraiba
 Pernambuco
 Alagoas
 Sergipe
@@ -20,18 +20,18 @@ Bahia
 
 Sudeste
 Minas Gerais
-Espírito Santo
+Espirito Santo
 Rio de Janeiro
-São Paulo
+Sao Paulo
 
 Sul
-Paraná
+Parana
 Santa Catarina
 Rio Grande do Sul
 
 Centro-Oeste
 Mato Grosso do Sul
-Mato Grosso 
-Goiás
+Mato Grosso
+Goias
 Distrito Federal
 

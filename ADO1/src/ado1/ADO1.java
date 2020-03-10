@@ -8,6 +8,7 @@ package ado1;
 import java.io.*;
 import static java.lang.Float.parseFloat;
 import java.text.DecimalFormat;
+import static javafx.application.Platform.exit;
 
 /**
  *
@@ -28,6 +29,9 @@ public class ADO1 {
         String linha = null;
         float[] pibs = new float[27];
         String[] estados = new String[27];
+        String[] regioes = new String[5];
+        float[] pibRegioes = new float[5];
+        String[] salvaSaida = new String[5];
         /*      ------------------------------------- */
  /*      Abertura de arquivo e loop de leitura */
  /*      ------------------------------------- */
@@ -63,21 +67,37 @@ public class ADO1 {
         try {
             FileReader fileReader = new FileReader(nomeDoArquivo2);
             BufferedReader bufferedReader = new BufferedReader(fileReader);
-            boolean primeiraLinha = true;
-            String estadoAtual = "";
+
+            boolean itsEstado = false;
+            String[] regiao = new String[5];
+            int contRegiao = 0;
+            float somaRegiao = 0;
 
             // loop por cada linha do arquivo
             while ((linha = bufferedReader.readLine()) != null) {
-                //if(primeiraLinha == true) {
-                int item = 0;
-                if (linha == estados[1]) {
-                    System.out.println("SEI la");
+                itsEstado = false;
+                if (!linha.equals("")) {
+                    for (int i = 0; i < 27; i++) {
+                        if (linha.equals(estados[i])) {
+                            itsEstado = true;
+                            somaRegiao = somaRegiao + pibs[i];
+                            System.out.println(" PIB do Estado: " + linha + " incluido na regiao " + regiao[contRegiao - 1]);
+                        }
+                    }
+
+                    if (itsEstado == false) {
+                        regiao[contRegiao] = linha;
+                        System.out.println("Região encontrada: " + linha);
+                        contRegiao++;
+                    }
+                } else if (linha.equals("")) {
+                    salvaSaida[contRegiao - 1] = ("pib da regiao " + regiao[contRegiao - 1] + " = " + somaRegiao);
+                    System.out.println("pib da regiao " + regiao[contRegiao - 1] + " = " + somaRegiao);
+                    somaRegiao = 0;
+                    System.out.println(linha);
                 }
 
-                // estadoAtual = linha;
-                // }
             }
-
             //somaPib = somaPib+(values[2]);
             // feche o arquivo
             bufferedReader.close();
@@ -97,10 +117,12 @@ public class ADO1 {
             FileWriter fileWriter = new FileWriter(arquivoDeSaida);
 
             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-
-            bufferedWriter.write("pib da regiao X = $$$$");
-            bufferedWriter.newLine();
-            bufferedWriter.write("pib da regiao Y = $$$$");
+            
+            for (int i = 0; i < 5; i++) {
+                bufferedWriter.write(salvaSaida[i]);
+                bufferedWriter.newLine();
+            }
+            
 
             // feche o arquivo
             bufferedWriter.close();
