@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ado1;
 
 import java.io.*;
@@ -16,32 +11,24 @@ import static javafx.application.Platform.exit;
  */
 public class ADO1 {
 
-    /**
-     * @param args the command line arguments
-     */
+
     public static void main(String[] args) {
 
-        // nome do arquivo
         String nomeDoArquivo1 = "pib.txt";
         String nomeDoArquivo2 = "regioes.txt";
 
-        // linha temporaria
         String linha = null;
         float[] pibs = new float[27];
         String[] estados = new String[27];
-        String[] regioes = new String[5];
-        float[] pibRegioes = new float[5];
         String[] salvaSaida = new String[5];
-        /*      ------------------------------------- */
- /*      Abertura de arquivo e loop de leitura */
- /*      ------------------------------------- */
+
         try {
             FileReader fileReader = new FileReader(nomeDoArquivo1);
 
             BufferedReader bufferedReader = new BufferedReader(fileReader);
             float somaPib = 0;
             int cont = 0;
-            // loop por cada linha do arquivo
+            
             while ((linha = bufferedReader.readLine()) != null) {
                 String[] values = linha.split(";");
                 somaPib = somaPib + (parseFloat(values[1]));
@@ -55,8 +42,7 @@ public class ADO1 {
                 System.out.println("O estado " + estados[i] + " contem % " + decimal.format(porcentagem) + " do PIB.");
 
             }
-            //somaPib = somaPib+(values[2]);
-            // feche o arquivo
+            
             bufferedReader.close();
         } catch (FileNotFoundException ex) {
             System.out.println("Arquivo inexistente: '" + nomeDoArquivo1 + "'");
@@ -73,7 +59,6 @@ public class ADO1 {
             int contRegiao = 0;
             float somaRegiao = 0;
 
-            // loop por cada linha do arquivo
             while ((linha = bufferedReader.readLine()) != null) {
                 itsEstado = false;
                 if (!linha.equals("")) {
@@ -98,8 +83,7 @@ public class ADO1 {
                 }
 
             }
-            //somaPib = somaPib+(values[2]);
-            // feche o arquivo
+           
             bufferedReader.close();
         } catch (FileNotFoundException ex) {
             System.out.println("Arquivo inexistente: '" + nomeDoArquivo1 + "'");
@@ -107,9 +91,8 @@ public class ADO1 {
             System.out.println("Erro lendo o arquivo '" + nomeDoArquivo1 + "'");
         }
 
-        /*      ------------------------------------- */
- /*      Exemplo de escrita em arquivo         */
- /*      ------------------------------------- */
+       
+
         String arquivoDeSaida = "saida.txt";
 
         try {
@@ -124,7 +107,6 @@ public class ADO1 {
             }
             
 
-            // feche o arquivo
             bufferedWriter.close();
         } catch (IOException ex) {
             System.out.println("Erro de escrita em '" + arquivoDeSaida + "'");
